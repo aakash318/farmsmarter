@@ -46,7 +46,7 @@ const Cart = ({ count, setCount, bill, setBill, totalBill, setTotalBill }) => {
     useEffect(() => {
 
         axios
-            .get("http://localhost:5000/cart/1")
+            .get(`${import.meta.env.VITE_API_URL}/cart/1`)
             .then((res) => {
                 setCartItems(res.data);
             })
@@ -60,7 +60,7 @@ const Cart = ({ count, setCount, bill, setBill, totalBill, setTotalBill }) => {
 
         const product = cartItems.find(item => item.id === id);
 
-        axios.delete(`http://localhost:5000/cart/${id}`)
+        axios.delete(`${import.meta.env.VITE_API_URL}/${id}`)
             .then(() => {
 
                 setCartItems(prev =>
@@ -109,7 +109,7 @@ const Cart = ({ count, setCount, bill, setBill, totalBill, setTotalBill }) => {
                             <div className="cart-image-box">
 
                                 <img
-                                    src={`http://localhost:5000/uploads/${item.image}`}
+                                    src={`${import.meta.env.VITE_API_URL}/uploads/${item.image}`}
                                     className="cart-image"
                                     alt={item.productName}
                                 />

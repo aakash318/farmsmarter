@@ -14,7 +14,7 @@ const Farmer = ({ count, setCount, bill, setBill }) => {
 
     useEffect(() => {
 
-        axios.get("http://localhost:5000/products")
+        axios.get(`${import.meta.env.VITE_API_URL}/products`)
 
             .then((res) => {
                 setProducts(res.data);
@@ -51,7 +51,7 @@ const Farmer = ({ count, setCount, bill, setBill }) => {
                             <div className="image-box">
 
                                 <img
-                                    src={`http://localhost:5000/uploads/${items.image}`}
+                                    src={`${import.meta.env.VITE_API_URL}/uploads/${items.image}`}
                                     alt={items.productName}
                                     className="product-img"
                                 />

@@ -47,7 +47,7 @@ const Checkout = ({ totalBill, setTotalBill }) => {
             }
 
             const response = await axios.post(
-                "http://localhost:5000/payment/create-order",
+                `${import.meta.env.VITE_API_URL}/payment/create-order`,
                 {
                     amount: totalBill
                 }
@@ -76,7 +76,7 @@ const Checkout = ({ totalBill, setTotalBill }) => {
                     try {
 
                         await axios.post(
-                            "http://localhost:5000/payment/success",
+                            `${import.meta.env.VITE_API_URL}/payment/success`,
                             {
                                 razorpay_payment_id: response.razorpay_payment_id,
                                 razorpay_order_id: response.razorpay_order_id

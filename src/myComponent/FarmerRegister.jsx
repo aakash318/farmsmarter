@@ -19,7 +19,7 @@ const FarmerRegister = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/register", FormData)
+    axios.post(`${import.meta.env.VITE_API_URL}/register`, FormData)
       .then((res) => { alert("succesfully inserted") })
       .catch((err) => {
         console.log(err);

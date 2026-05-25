@@ -23,7 +23,7 @@ const FarmerProfile = () => {
     const fetchProducts = () => {
 
         axios
-            .get("http://localhost:5000/products")
+            .get(`${import.meta.env.VITE_API_URL}/products`)
 
             .then((res) => {
 
@@ -42,7 +42,7 @@ const FarmerProfile = () => {
     const deleteProduct = (id) => {
 
         axios
-            .delete(`http://localhost:5000/deleteProduct/${id}`)
+            .delete(`${import.meta.env.VITE_API_URL}/deleteProduct/${id}`)
 
             .then(() => {
 
@@ -147,7 +147,7 @@ const FarmerProfile = () => {
                             <div className="image-box">
 
                                 <img
-                                    src={`http://localhost:5000/uploads/${item.image}`}
+                                    src={`${import.meta.env.VITE_API_URL}/uploads/${item.image}`}
                                     alt={item.productName}
                                     className="product-img"
                                 />

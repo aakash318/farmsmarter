@@ -336,7 +336,7 @@ Please upload image.`
 
         axios.post(
 
-            "http://localhost:5000/addProduct",
+           ` ${import.meta.env.VITE_API_URL}/addProduct`,
 
             formData,
 

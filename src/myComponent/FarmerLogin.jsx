@@ -19,7 +19,7 @@ const FarmerLogin = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/login", FormData).then((res) => {
+    axios.post(`${import.meta.env.VITE_API_URL}/login`, FormData).then((res) => {
       alert("login successs")
       navigate("/farmer/profile");
     }).catch((err) => { console.log(err) })

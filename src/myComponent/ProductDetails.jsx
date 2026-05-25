@@ -11,7 +11,7 @@ const ProductDetails = ({ count, setCount, bill, setBill }) => {
     useEffect(() => {
 
         axios
-            .get(`http://localhost:5000/product/${id}`)
+            .get(`${import.meta.env.VITE_API_URL}/product/${id}`)
             .then((res) => {
 
                 setProduct(res.data);
@@ -28,7 +28,7 @@ const ProductDetails = ({ count, setCount, bill, setBill }) => {
     const addToCart = () => {
 
         axios.post(
-            "http://localhost:5000/cart",
+           ` ${import.meta.env.VITE_API_URL}/cart`,
             {
                 user_id: 1,
                 product_id: product.id,
@@ -62,7 +62,7 @@ const ProductDetails = ({ count, setCount, bill, setBill }) => {
                 <div className="col-md-6">
 
                     <img
-                        src={`http://localhost:5000/uploads/${product.image}`}
+                        src={`${import.meta.env.VITE_API_URL}/uploads/${product.image}`}
                         style={{
                             width: "100%",
                             height: "500px",
