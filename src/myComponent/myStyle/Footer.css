@@ -1,0 +1,7 @@
+.body{
+    background-color: black;
+}
+#parent{
+    display: block;
+    background-color: green;
+}
