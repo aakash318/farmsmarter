@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const FarmerProfile = () => {
-   
+   const navigate=useNavigate();
     const farmer = {
         name: "Aakash pathak",
         location: "Delhi",
