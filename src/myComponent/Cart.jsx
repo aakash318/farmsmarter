@@ -60,7 +60,7 @@ const Cart = ({ count, setCount, bill, setBill, totalBill, setTotalBill }) => {
 
         const product = cartItems.find(item => item.id === id);
 
-        axios.delete(`${import.meta.env.VITE_API_URL}/${id}`)
+        axios.delete(`${import.meta.env.VITE_API_URL}/cart/${id}`)
             .then(() => {
 
                 setCartItems(prev =>
