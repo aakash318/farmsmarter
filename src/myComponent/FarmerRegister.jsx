@@ -24,6 +24,7 @@ const FarmerRegister = () => {
         navigate("/farmer/farmerLogin") })
       .catch((err) => {
         console.log(err);
+        alert(err);
       })
 
   }
