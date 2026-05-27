@@ -20,7 +20,8 @@ const FarmerRegister = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`${import.meta.env.VITE_API_URL}/register`, FormData)
-      .then((res) => { res.send(data) })
+      .then((res) => { res.send(data) 
+        navigate("/farmer/farmerLogin") })
       .catch((err) => {
         console.log(err);
       })
