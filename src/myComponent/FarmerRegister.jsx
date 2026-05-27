@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { data, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import { useState } from 'react';
 
@@ -20,7 +20,7 @@ const FarmerRegister = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`${import.meta.env.VITE_API_URL}/register`, FormData)
-      .then((res) => { alert("succesfully inserted") })
+      .then((res) => { res.send(data) })
       .catch((err) => {
         console.log(err);
       })
