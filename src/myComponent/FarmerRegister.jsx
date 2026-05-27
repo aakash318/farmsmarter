@@ -20,11 +20,13 @@ const FarmerRegister = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`${import.meta.env.VITE_API_URL}/register`, FormData)
-      .then((res) => { res.send(data) 
-        navigate("/farmer/farmerLogin") })
+      .then((res) => { if(res.data.msg=="data inserted succesfully"){
+        alert("you are registered")
+        navigate("/farmer/farmerLogin")
+      }})
       .catch((err) => {
         console.log(err);
-        alert(err);
+        alert("you are already registered");
       })
 
   }
